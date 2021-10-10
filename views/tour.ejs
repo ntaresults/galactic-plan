@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name.toUpperCase() %> TOUR</title>
+
+    <link rel="stylesheet" href="/styles/tour.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="short icon" href="/images/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="slide slide1">
+        <img src="<%= info.planet_img %>">
+        <div class="slide1-content">
+            <h1><%= name %></h1>
+            <h2 id="tag"><%= info.tagline %></h2>
+        </div>
+
+        <div class="satellite">
+            <img src="/images/satellite.png">
+        </div>
+    </div>
+
+    <div class="slide slide2">
+        <img src="/images/Tour/spaceship-inside.jpg">
+        <div class="slide2-content">
+            <h1>Spaceship Tour</h1>
+            <p>
+                This tour will include our premium spaceship for all the passengers which contains all the luxury rooms. The passengers will not feel any discomfort while travelling to their desired destination. The spaceship also has many huge windows and screen for the passengers to see the wonderfull outside view.
+            </p>
+        </div>
+    </div>
+
+    <div class="slide slide3">
+        <img src="<%= info.attraction_img %>">
+        <div class="slide3-content">
+            <h4>Famous Attraction:</h4>
+            <h1><%= info.attraction %></h1>
+            <p>
+                <%= info.description %>
+            </p>
+        </div>
+    </div>
+
+    <div class="slide slide4" id="last">
+        <a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>&nbsp;&nbsp;<span class="title"><%= name %> Tour</span>
+        <br><br>
+        <table>
+            <tr>
+                <th>Duration:</th>
+
+                <th>Price:</th>
+            </tr>
+            <tr>
+                <td><%= info.duration %></td>
+                <td><%= info.price %></td>
+            </tr>
+        </table>
+        <br>
+        <h4>Attractions:</h4>
+        <p><%= info.all_attractions %></p>
+
+        <h4>Note:</h4>
+        <p>All the passengers will be given and taught how to use the space suit along with the oxygen tanks. All the equipment cost is included in the price.</p>
+
+        <a href="/book/<%= name.toLowerCase() %>"><button>Book Tour</button></a>
+
+        <img src="<%= info.planet_img %>">
+    </div>
+</body>
+<script>
+    var tagline = document.getElementById('tag')
+
+    setTimeout(() => tagline.style.width = '100%', 2800)
+
+    setTimeout(() => document.getElementById('last').style.opacity = '1', 30000)
+</script>
+</html>
