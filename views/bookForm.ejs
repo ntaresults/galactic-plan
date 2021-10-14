@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <!-- ^ margin removed -->
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <!-- ^ navbar styling -->
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="/styles/bookForm.css" />
+    <!-- ^ main css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ^ font awsome -->
+    <title>Galactic Tours</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"> <a href="/"><img src="/images/logo.png" alt="logo" /></div></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/book">Bookings</a></li>
+          <li><a href="/shop">Shop</a></li>
+        </ul>
+        <div id="burger">
+          <img src="/images/burger.svg" alt="">
+        </div>
+      </nav>
+    </header>
+    <section class="formpage">
+        <div class="sidebar">
+          <h1>Book a Trip</h1>
+          <img src="/images/booked.svg" alt="">
+        </div>
+        <div class="form">
+          <form action="#">
+             <label for="name">Name</label>
+            <input type="text" placeholder="Enter Name" />
+             <label for="name">Email</label>
+            <input type="text" placeholder="Enter Email" />
+            <label for="name">Phone Number</label>
+            <input type="text" placeholder="Enter Phone nNumber" />
+            <label for="email">Age</label>
+            <input type="email" placeholder="Enter age" />
+            <label for="password">Nationality</label>
+            <input type="password" placeholder="Enter Nationality" />
+            <label for="password">Address</label>
+            <input type="password" placeholder="Enter Address" />
+            <button>Book</button>
+          </form>
+        </div>
+    </section>
+      <div class="waves">
+          <img src="/images/chill.png" alt="">
+        </div>
+        <script src="./scripts/burger.js"></script>
+  </body>
+</html>
