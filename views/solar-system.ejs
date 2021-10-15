@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+
+    <link rel="stylesheet" href="./styles/solar-system.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="short icon" href="./images/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="./scripts/planets.json"></script>
+</head>
+<body>
+    <a href="/"><img src="/images/logo.png" class="home"></a>
+    
+    <div class="neptune orbit" id="neptune-container">
+        <img src='./images/neptune.png' onclick="show(this.id)" id="nEptunE">
+    </div>
+
+    <div class="uranus orbit" id="uranus-container">
+        <img src='./images/uranus.png' onclick="show(this.id)" id="uranus">
+    </div>
+
+    <div class="saturn orbit" id="saturn-container">
+        <img src='./images/saturn.png' onclick="show(this.id)" id="saturn">
+    </div>
+
+    <div class="jupiter orbit" id="jupiter-container">
+        <img src='./images/jupiter.png' onclick="show(this.id)" id="jupitEr">
+    </div>
+
+    <div class="mars orbit" id="mars-container">
+        <img src='./images/mars.png' onclick="show(this.id)" id="mars">
+    </div>
+
+    <div class="earth orbit" id="earth-container">
+        <img src='./images/earth.png' onclick="show(this.id)" id="Earth">
+    </div>
+
+    <div class="venus orbit" id="venus-conatiner">
+        <img src='./images/venus.png' onclick="show(this.id)" id="vEnus">
+    </div>
+
+    <div class="mercury orbit" id="mercury-container">
+        <img src='./images/mercury.png' onclick="show(this.id)" id="mErcury">
+    </div>
+
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-left">
+                <h1 id="my_name"></h1>
+
+                <center>
+                    <p id="planet-info"></p>
+                </center>
+
+                <div id="tour-btns">
+                    <a href="/book/" id='booktour'><button>Book Tour</button></a> <a href="/tour/earth" id="tour">Tour Info <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="modal-right">
+                <img src="./images/earth.png" id="planet-img">
+            </div>
+        </div>
+    </div>
+
+
+    <!--other on screen objects-->
+    <img src="./images/sun.jpg" class="sun" id='sun'>
+    <img src="./images/rocket.png" class="rocket" id="rocket">
+    <img src="./images/commet.png" class="commet" id='commet'>
+    <a href="#mars-container"><button style="display: none;" id="mercury-scroll"></button></a>
+</body>
+<script>
+    var planet = JSON.parse(data);
+    var modal = document.getElementById('modal')
+    var info = document.getElementById('planet-info')
+    var n = document.getElementById('my_name')
+    var img = document.getElementById('planet-img')
+    var tour = document.getElementById('tour')
+    var bookt = document.getElementById('booktour')
+
+    setTimeout(() => document.getElementById('mercury-scroll').click(), 100)
+    
+    function show(id){
+        n.innerHTML = id
+        img.src = 'images/'+id.toLowerCase()+'.png'
+        info.innerHTML = planet[0][id.toLowerCase()]
+        tour.href = '/tour/'+id.toLowerCase()
+        bookt.href = '/book/'+id.toLowerCase()
+        modal.style.display = 'block'
+
+        if (id === 'Earth'){document.getElementById('tour-btns').style.display = 'none'}
+        else {document.getElementById('tour-btns').style.display = 'block'}
+    }
+
+    window.onclick = (event) => {
+            if (event.target == modal){
+                modal.style.display='none'
+            }
+        }
+</script>
+</html>
